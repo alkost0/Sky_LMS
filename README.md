@@ -1,4 +1,4 @@
-# drf_project
+# Курсовая работа 8. Докер
 
 # README для создания и запуска Docker-образа из Dockerfile
 

@@ -16,7 +16,7 @@ services:
     image: postgres
     user: ${USER_DB}
     environment:
-      - POSTGRES_DB=&{NAME_DB}
+      - POSTGRES_DB=${NAME_DB}
       - POSTGRES_USER=${USER_DB}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - PGDATA=/var/lib/postgresql/data/pgdata
@@ -25,7 +25,7 @@ services:
     ports:
       - '5432:5432'
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready" ]
+      test: [ "CMD-SHELL", "pg_isready  -U ${USER_DB} -d ${NAME_DB}" ]
       interval: 10s
       timeout: 5s
       retries: 5

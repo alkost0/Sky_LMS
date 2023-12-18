@@ -40,4 +40,5 @@
 
 1. Следует ввести команду для запуска всего проекта: 
 
-docker-compose up --build
+   ```docker-compose up --build
+   ```
